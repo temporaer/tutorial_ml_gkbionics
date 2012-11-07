@@ -1,0 +1,78 @@
+% rubber: module xelatex
+\documentclass[english,final,compress]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\mode<beamer>{\usetheme{Bonn}}
+\usepackage{fontspec}
+\defaultfontfeatures{Mapping=tex-text}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\setmainfont[Scale=0.86,Mapping=tex-text]{News Gothic MT}
+\setsansfont[Scale=0.86,Mapping=tex-text]{News Gothic MT}
+\setmonofont[Scale=0.86,Mapping=tex-text]{Andale Mono}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\usepackage[EU1]{fontenc}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{csquotes}
+\usepackage{mdwtab}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{amsthm}
+\renewcommand\maketitle{\frame[plain]{\titlepage}\addtocounter{framenumber}{-1}}
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Tutorial Machine Learning in Python}
+\author{Andreas M\"uller, Hannes Schulz, and Sven Behnke\\[5mm]\includegraphics[width=.2\linewidth]{style/Logo_UBo_h24_4c-crop}}
+\date{ICANN 2012}
+\begin{document}
+
+\maketitle
+
+
+\lstset{%
+    basicstyle=\small\tt,
+    keywordstyle=\color{beamer@bonnblue}\bfseries, % style for keywords
+    numbers=none, % where to put the line-numbers
+    numberstyle=\tiny, % the size of the fonts that are used for the line-numbers
+    showspaces=false, % show spaces adding particular underscores
+    showstringspaces=false, % underline spaces within strings
+    showtabs=false, % show tabs within strings adding particular underscores
+    tabsize=2, % sets default tabsize to 2 spaces
+    captionpos=b, % sets the caption-position to bottom
+    breaklines=true, % sets automatic line breaking
+    breakatwhitespace=false, 
+}
+\newcommand\fenc{f_{\mathrm{enc}}}
+\newcommand\fdec{f_{\mathrm{dec}}}
+\newcommand\Wand{\ensuremath{W_{\mathbf{and}}}}
+\newcommand\Wor{\ensuremath{W_{\mathbf{or}}}}
+\newcommand{\w}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand\loss{\ell}
+
+\frame[plain]{\frametitle{Outline}\tableofcontents\addtocounter{framenumber}{-1}}
+\section{Introduction}
+\begin{frame}
+    \frametitle{Motivation}
+    \begin{itemize}
+        \item bla
+    \end{itemize}
+\end{frame}
+
+\end{document}

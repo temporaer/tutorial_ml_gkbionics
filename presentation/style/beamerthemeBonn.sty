@@ -1,0 +1,96 @@
+% rubber: set program xelatex
+\DeclareOptionBeamer{compress}{\beamer@compresstrue}
+\ProcessOptionsBeamer
+
+\mode<presentation>
+
+%\useinnertheme[shadow=false]{rounded}
+%\usecolortheme{orchid}
+%\usecolortheme{whale}
+\useoutertheme{infolines}
+
+\definecolor{beamer@bonnblue}{rgb}{0.118,0.361,0.702}
+
+\setbeamercolor{palette primary}{fg=beamer@bonnblue,bg=white}
+\setbeamercolor{palette secondary}{fg=beamer@bonnblue,bg=white}
+\setbeamercolor{palette tertiary}{bg=beamer@bonnblue,fg=white}
+\setbeamercolor{section in head/foot}{bg=beamer@bonnblue!80,fg=white}
+\setbeamercolor{subsection in head/foot}{bg=beamer@bonnblue!70,fg=white}
+\setbeamercolor{author in head/foot}{bg=beamer@bonnblue!80,fg=white}
+\setbeamercolor{title in head/foot}{bg=beamer@bonnblue!70,fg=white}
+\setbeamercolor{date in head/foot}{bg=beamer@bonnblue!80,fg=white}
+\setbeamercolor{title}{bg=beamer@bonnblue,fg=white}
+\setbeamercolor{structure}{bg=beamer@bonnblue,fg=beamer@bonnblue}
+\setbeamercolor{block body}{bg=beamer@bonnblue!20,fg=black}
+\setbeamercolor{block title}{bg=beamer@bonnblue,fg=white}
+\setbeamercolor{titlelike}{parent=palette primary}
+\setbeamercolor{frametitle}{fg=white,bg=beamer@bonnblue}
+\setbeamercolor{item}{fg=black}
+\setbeamercolor{block title alerted}{bg=beamer@bonnblue!40,fg=white!20!red}
+\setbeamercolor{block body alerted}{bg=beamer@bonnblue!20,fg=black}
+
+\setbeamertemplate{frametitle}{%
+\leavevmode
+\begin{beamercolorbox}[wd=\paperwidth]{frametitle}%
+	%\vspace{-1.000ex}%
+	\vphantom{\insertlogo}
+	\hspace{1ex}%
+	%\framebox{\parbox{9cm}{\usebeamerfont{frametitle}\insertframetitle\strut}}%
+	\parbox{9cm}{\insertframetitle\strut}%
+	\hfill%
+	%\raisebox{-1ex}[0pt][-\ht\strutbox]{\insertlogo}
+	\raisebox{-.25ex}[0pt][-\ht\strutbox]{\insertlogo}%
+	\hspace*{1ex}%
+	%\vspace{-0.500ex}%
+\end{beamercolorbox}}
+
+
+\setbeamerfont{block title}{size={}}
+\setbeamertemplate{headline}{%
+	\leavevmode%
+	\hbox{%
+	\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{section in head/foot}%
+		\usebeamerfont{section in head/foot}\hspace*{2ex}\insertsectionhead\hspace*{2ex}
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{subsection in head/foot}%
+		\usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead%
+		\hfill\insertframenumber{}/\inserttotalframenumber\hspace*{2ex}
+	\end{beamercolorbox}}%
+	\vskip0pt%
+  }
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~(\insertshortinstitute)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\AtBeginSection[]
+{
+  \begin{frame}<beamer>[plain]
+    \frametitle{Outline}
+    \tableofcontents[currentsection]
+     \addtocounter{framenumber}{-1} 
+  \end{frame}
+}
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>[plain]
+    \frametitle{Outline}
+    \tableofcontents[currentsection,subsectionstyle=show/shaded/hide]
+     \addtocounter{framenumber}{-1} 
+  \end{frame}
+}
+
+\mode
+<all>

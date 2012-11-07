@@ -1,0 +1,37 @@
+%% Jérôme Lelong (September 2007)
+%% 
+%% this stuff fixes the frame numbering in beamer when using an appendix such
+%% that the slides of the appendix are not counted in the total framenumber
+
+
+\makeatletter
+
+
+\let\appendixtotalframenumber\empty
+\def\mainend{-1}
+\let\appendixorig\appendix
+
+\def\appendix{
+  \edef\mainend{\theframenumber}
+  \immediate\write\@auxout{\string\global\string\@namedef{mainendframenumber}{\mainend}}
+  \appendixorig
+  \def\inserttotalframenumber{\appendixtotalframenumber}%
+  \setcounter{framenumber}{0}
+}
+
+\def\pageatend{
+  \edef\appendixend{\theframenumber}
+  \ifnum\mainend>0%
+  \immediate\write\@auxout{\string\global\string\@namedef{appendixtotalframenumber}{\appendixend}}%
+  \immediate\write\@auxout{\string\global\string\@namedef{inserttotalframenumber}{\mainend}}%
+  \immediate\write\@auxout{\string\@writefile{nav}{\noexpand \headcommand {%
+        \noexpand \def\noexpand \inserttotalframenumber{\mainend}}}}%
+  \immediate\write\@auxout{\string\@writefile{nav}{\noexpand \headcommand {%
+        \noexpand \def\noexpand \appendixtotalframenumber{\appendixend}}}}%
+  \else
+  \fi
+}
+
+
+\AtEndDocument{\pageatend}
+\makeatother
