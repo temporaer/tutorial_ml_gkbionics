@@ -41,8 +41,6 @@ dirs:
 	@mkdir -p .mk 
 	@mkdir -p .kjn
 	#@cp pic/* .mk
-	ln -sf pic/robotplant.mov .mk/
-	ln -sf pic/robotplant.mov .
 
 clean:
 	rm -rf .mk
@@ -54,10 +52,9 @@ distclean:clean
 install:
 	@echo "Installing fonts...."
 	mkdir -p ~/.fonts && cp style/ubo_fonts.zip ~/.fonts && cd ~/.fonts && unzip ubo_fonts.zip
+	sudo apt-get install --reinstall ttf-mscorefonts-installer
 	@echo "Installing rubber module for xelatex...."
 	sudo cp rubber/xelatex.py /usr/share/rubber/rubber/rules/latex
-convertmovie:
-	mencoder -nosound -forceidx -of lavf -ovc lavc -lavcopts vcodec=flv:vbitrate=2500:mbd=2:mv0:trell:v4mv:cbp:last_pred=3 -o pic/robotplant.flv pic/robotplant.mov
 testplain:
 	cp style/* .
 	pdflatex presentation
