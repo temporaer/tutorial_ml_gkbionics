@@ -9,11 +9,11 @@ all: dirs screen
 
 screen: dirs
 	#@perl -pi'.orig' -e 's/,compress,handout\]/,compress]/' $(SOURCE);
-	rubber -m xelatex -W all -s --into .mk -I . -I ../pic -I ../pic2 -I style $(TARGET)
+	rubber -m xelatex -W all -s --into .mk -I . -I pic -I style $(TARGET)
 	@mv .mk/$(TARGET).pdf $(TARGET)_screen.pdf
 handout: dirs
 	#perl -pi'.orig' -e 's/,compress\]/,compress,handout]/' $(SOURCE);
-	rubber -W all -s --into .mk -I ../pic -I pic2  -I style --pdf $(TARGET)
+	rubber -W all -s --into .mk -I . -I pic  -I style --pdf $(TARGET)
 	mv .mk/$(TARGET).pdf $(TARGET)_handout.pdf
 	#pdfnup --paper a4paper --orient landscape --nup 3x2 --frame true --outfile bla.pdf $(TARGET)_handout.pdf
 	#mv bla.pdf $(TARGET)_handout.pdf
