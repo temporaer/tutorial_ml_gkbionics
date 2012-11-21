@@ -69,78 +69,136 @@
 \frame[plain]{\frametitle{Outline}\tableofcontents\addtocounter{framenumber}{-1}}
 \section{Introduction}
 
-
 \begin{frame}
     \frametitle{Machine Learning Overview}
-    Before Lunch: Unsupervised Learning
     \begin{itemize}
-        \item Slides
-            \begin{itemize}
-                \item PCA
-                    - Slides
-                      - have: high-dim noisy data, no way to look at it
-                      - Dimensionality Reduction (e.g. for visualization)
-                      - Determining relevant axes
-                      - Noise removal
-                    - interactive:
-                      - load data
-                      - plot data
-                      - do PCA on blobs
-                      - plot transformed/backtransformed data
-                      - select subset of eigenvectors
-                      - plot transformed/backtransformed data
-                      - same with some high-dim bio data (TODO: find good data!)
-                \item K-Means
-                    - interactive:
-                      - find blobs on artificial data
-                      - color discretization in an image (TODO: bio images (--> Kristian & Baukhage?))
-                      - visualize cluster centers in "interesting data" (TODO: data??)
-            \end{itemize}
+        \item Intro: Andy/Hannes?
+        \item Before Lunch: Unsupervised Learning (Hannes)
+        \item After Lunch: Supervised Learning (Nenad LinReg, Andy LogReg/kNN)
     \end{itemize}
+\end{frame}
 
-    After Lunch: Supervised Learning
+\section{Unsupervised Learning}
+
+\subsection{PCA}
+
+\begin{frame}
+    \frametitle{PCA -- Theory}
     \begin{itemize}
-        \item General
-            - Supervised Learning
-            - Training, Testing
-        \item Linear Regression, 
-            - Slides
-                - talk about regression coefficients
-                - prediction error
-                - draw line in 2D
-                - (draw plane in 3D)
-                - formula for hyperplane
-                - formula for the loss
-            - interactive
-              - use some real-world dataset
-                http://people.sc.fsu.edu/~jburkardt/datasets/regression/regression.html
-              - find w hat by calling linear regression function
-              - measure prediction error for withheld subset data
-              - plot result (tricky)
-              - same using boston housing or diabetes dataset
-        \item Classification (mention not only linear?)
-            - Logistic Regression
-              - Slides
-                - have: data, binary categorical variable
-                - want: simple (linear, interpretable?) function that distinguishes between classes 
-                - how:
-                  - draw line in 2D on blobs
-                  - (draw plane in 3D) on blobs
-                  - formula for hyperplane
-                  - minimize error using
-                  - formula for the loss
-              - interactive
-                - some 2D blobs dataset
-                - Breast Cancer dataset
-                - http://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29
-            - KNN
-              - Slides:
-                - have: data, categorical variable
-              - interactive
-                - start with blobs from k-means
-                - Iris dataset
-                - Measure prediction error
-                - Maybe: Complexity curve visualization (needs a loop)
+        \item  have: high-dim noisy data, no way to look at it
+        \item  Dimensionality Reduction (e.g.\ for visualization)
+        \item  Determining relevant axes
+        \item  Noise removal
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{PCA -- Interactive}
+    \begin{itemize}
+        \item  load data
+        \item  plot data
+        \item  do PCA on blobs
+        \item  plot transformed/backtransformed data
+        \item  select subset of eigenvectors
+        \item  plot transformed/backtransformed data
+        \item  same with some high-dim bio data (TODO: find good data!)
+    \end{itemize}
+\end{frame}
+
+\subsection{k-Means}
+
+\begin{frame}
+    \frametitle{k-Means -- Theory}
+\end{frame}
+
+\begin{frame}
+    \frametitle{k-Means -- Interactive}
+    \begin{itemize}
+        \item  find blobs on artificial data
+        \item  color discretization in an image (TODO: bio images (--> Kristian and Baukhage?))
+        \item  visualize cluster centers in "interesting data" (TODO: data??)
+    \end{itemize}
+\end{frame}
+
+\section{Supervised Learning}
+
+
+\begin{frame}
+    \frametitle{Supervised Learning -- General}
+    \begin{itemize}
+        \item Supervised Learning
+        \item Training, Testing
+    \end{itemize}
+\end{frame}
+
+\subsection{Linear Regression}
+
+\begin{frame}
+    \frametitle{Linear Regression -- Theory}
+    \begin{itemize}
+        \item talk about regression coefficients
+        \item  prediction error
+        \item  draw line in 2D
+        \item  (draw plane in 3D)
+        \item  formula for hyperplane
+        \item  formula for the loss
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Linear Regression -- Interactive}
+    \begin{itemize}
+        \item  use some real-world dataset
+            http://people.sc.fsu.edu/~jburkardt/datasets/regression/regression.html
+        \item  find w hat by calling linear regression function
+        \item  measure prediction error for withheld subset data
+        \item  plot result (tricky)
+        \item  same using boston housing or diabetes dataset
+    \end{itemize}
+\end{frame}
+
+\subsection{Logistic Regression}
+
+\begin{frame}
+    \frametitle{Logistic Regression -- Theory}
+    \begin{itemize}
+        \item have: data, binary categorical variable
+        \item  want: simple (linear, interpretable?) function that distinguishes between classes 
+        \item  how:
+        \item  draw line in 2D on blobs
+        \item  (draw plane in 3D) on blobs
+        \item  formula for hyperplane
+        \item  minimize error using
+        \item  formula for the loss
+    \end{itemize}
+\end{frame}
+
+\subsection{$k$ Nearest Neighbor}
+
+\begin{frame}
+    \frametitle{Logistic Regression -- Interactive}
+    \begin{itemize}
+        \item some 2D blobs dataset
+        \item  Breast Cancer dataset
+        \item  http://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{$k$ Nearest Neighbor -- Theory}
+    \begin{itemize}
+        \item Slides:
+        \item  have: data, categorical variable
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{$k$ Nearest Neighbor -- Interactive}
+    \begin{itemize}
+        \item  start with blobs from k-means
+        \item  Iris dataset
+        \item  Measure prediction error
+        \item  Maybe: Complexity curve visualization (needs a loop)
     \end{itemize}
 \end{frame}
 
