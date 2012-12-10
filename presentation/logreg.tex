@@ -1,3 +1,53 @@
+\subsection{Classification}
+\begin{frame}
+    \frametitle{Classification}
+    \begin{itemize}
+        \item Predict to which class a data point belongs.
+        \item Training data are pairs $\left( (x_0, y_0), \cdots, (x_n, y_n) \right), x_i \in \mathbbf{R}, y_i \in \{0, \cdots, k\}$
+        \item Classical example: Spam / Ham.
+        \item All classes known beforehand.
+        \item Other examples: Digit recognition, cancer benign/malignant, \ldots
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Logistic Regression}
+\begin{frame}
+    \frametitle{Logistic Regression}
+    \begin{itemize}
+        \item Misnamed: Classification, not regression.
+        \item Linear decision function.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mathematical Formulation I}
+    \begin{itemize}
+        \item For two classes $-1, +1$.
+        \item Decision boundary given by hyperplane.
+        \item Hyperplane defined by normal vector and offset:
+            \begin{align}
+            y = \sign(<w, x> + b)
+            \end{align}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mathematical Formulation II}
+    \begin{itemize}
+        \item Relation to regression:
+            \begin{align}
+                p(y=+1) = f(x) = \text{logistic}(<w, x> + b)
+            \end{align}
+        \item As probabilities are between $0$ and $1$, the logistic function
+            squashes the regression result.
+        \item $p(Y=+1 | x) > 0.5 \LeftRightArrow <w, x> + b > 0$
+        \item Need to solve:
+            \begin{align}
+                \min_w \sum_{i=0}^n \log(p(Y=y_i | x_i))
+            \end{align}
+    \end{itemize}
+\end{frame}
+
 \begin{frame}
     \frametitle{Logistic Regression -- Theory}
     \begin{itemize}
