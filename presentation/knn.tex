@@ -22,6 +22,10 @@
 
 \begin{frame}
     \frametitle{Illustration}
+    \begin{center}
+    \includegraphics<1>[width=.6\linewidth]{knn-pics/two_moons}
+    \includegraphics<2>[width=.6\linewidth]{knn-pics/two_moons_k=5}
+    \end{center}
 \end{frame}
 
 \begin{frame}
@@ -30,9 +34,10 @@
         \item General problem called model selection.
         \item Model selection is necessary for nearly all algorithms.
         \item For training data, $k=1$ gives perfect prediction - but not for new (test) data!
-        \item Larger $k$ leads to smoother boundaries and usually worse performance on the training set,
+        \item Larger $k$ leads to smoother boundaries and worse performance on the training set,
             but better on the test set.
     \end{itemize}
+    \includegraphics[width=.98\linewidth]{knn-pics/two_moons_varying_k}
 \end{frame}
 
 
