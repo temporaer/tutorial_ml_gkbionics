@@ -32,23 +32,34 @@
     \frametitle{Picking $k$}
     \begin{itemize}
         \item General problem called model selection.
-        \item Model selection is necessary for nearly all algorithms.
-        \item For training data, $k=1$ gives perfect prediction - but not for new (test) data!
-        \item Larger $k$ leads to smoother boundaries and worse performance on the training set,
-            but better on the test set.
+        %\item Model selection is necessary for nearly all algorithms.
+        \item For training data, $k=1$ gives perfect prediction -- but not for new data!
+        %\item Larger $k$ leads to smoother boundaries and worse performance on the training set,
+            %but better on the test set.
     \end{itemize}
     \includegraphics[width=.98\linewidth]{knn-pics/two_moons_varying_k}
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}[t]
     \frametitle{Really: Picking $k$ (in practice)}
     \begin{itemize}
         \item We can not choose $k$ on the training set.
         \item We can not choose $k$ on the set we evaluate our algorithm on (or
             for that we need predictions).
-        \item We need a third set: the validation set.
     \end{itemize}
+    \center
+        \begin{onlyenv}<2>
+            \includegraphics[width=.7\linewidth]{knn-pics/train_test_bars-crop}\\
+        \end{onlyenv}
+        \begin{onlyenv}<3->
+            \includegraphics[width=.7\linewidth]{knn-pics/train_val_test_bars-crop}\\
+        \end{onlyenv}
+
+    \includegraphics<4>[width=.7\linewidth]{knn-pics/two_moons_cross_validation_1}
+    \includegraphics<5>[width=.7\linewidth]{knn-pics/two_moons_cross_validation_2}
+    \includegraphics<6>[width=.7\linewidth]{knn-pics/two_moons_cross_validation_3}
+
 \end{frame}
 
 %\begin{frame}
