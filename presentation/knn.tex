@@ -1,27 +1,58 @@
+\subsection{$k$ Nearest Neighbors}
 \begin{frame}
-    \frametitle{Logistic Regression -- Interactive}
+    \frametitle{$k$ Nearest Neighbor}
     \begin{itemize}
-        \item some 2D blobs dataset
-        \item  Breast Cancer dataset
-        \item  http://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29
+        \item Classification: same setup as logistic regression.
+        \item Very simple but powerful idea: Do as your neighbors does.
+        \item For a new point $x$ look at the nearest (or the two nearest or three nearest, \ldots)
+            point in the training data for a label.
+        \item Usually: Euclidean distance in $\mathbb{R}^d$
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{$k$ Nearest Neighbor -- Theory}
+    \frametitle{Simple algorithm}
     \begin{itemize}
-        \item Slides:
-        \item  have: data, categorical variable
+        \item Pick a $k$, for example $k=3$.
+        \item Want to classify new example $x$.
+        \item Compute $d_i = d(x_i, x)$, i.e.\, $d(x_i, x) = ||x_i - x||$
+        \item Sort $d_i$, take $k$ smallest: $d_i_0, d_i_1, d_i_2$.
+        \item Assign $y$ that appears most often among $y_i_0, y_i_1, y_i_2$
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{$k$ Nearest Neighbor -- Interactive}
+    \frametitle{Illustration}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Picking $k$}
     \begin{itemize}
-        \item  start with blobs from k-means
-        \item  Iris dataset
-        \item  Measure prediction error
-        \item  Maybe: Complexity curve visualization (needs a loop)
+        \item General problem called model selection.
+        \item Model selection is necessary for nearly all algorithms.
+        \item For training data, $k=1$ gives perfect prediction - but not for new (test) data!
+        \item Larger $k$ leads to smoother boundaries and usually worse performance on the training set,
+            but better on the test set.
     \end{itemize}
 \end{frame}
 
+
+\begin{frame}
+    \frametitle{Really: Picking $k$ (in practice)}
+    \begin{itemize}
+        \item We can not choose $k$ on the training set.
+        \item We can not choose $k$ on the set we evaluate our algorithm on (or
+            for that we need predictions).
+        \item We need a third set: the validation set.
+    \end{itemize}
+\end{frame}
+
+%\begin{frame}
+    %\frametitle{$k$ Nearest Neighbor -- Interactive}
+    %\begin{itemize}
+        %\item  start with blobs from k-means
+        %\item  Iris dataset
+        %\item  Measure prediction error
+        %\item  Maybe: Complexity curve visualization (needs a loop)
+    %\end{itemize}
+%\end{frame}
