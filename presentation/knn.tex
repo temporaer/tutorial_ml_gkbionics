@@ -1,11 +1,11 @@
 \begin{frame}
-    \frametitle{$k$ Nearest Neighbor}
+    \frametitle{$k$ Nearest Neighbors}
     \begin{itemize}
         \item Classification: same setup as logistic regression.
         \item Very simple but powerful idea: Do as your neighbors does.
         \item For a new point $x$ look at the nearest (or the two nearest or three nearest, \ldots)
             point in the training data for a label.
-        \item Usually: Euclidean distance in $\mathbb{R}^d$
+        \item Usually: Euclidean distance in $\mathbb{R}^n$
     \end{itemize}
 \end{frame}
 
@@ -42,7 +42,7 @@
 
 
 \begin{frame}[t]
-    \frametitle{Really: Picking $k$ (in practice)}
+    \frametitle{Picking $k$ (in practice)}
     \begin{itemize}
         \item We can not choose $k$ on the training set.
         \item We can not choose $k$ on the set we evaluate our algorithm on (or
