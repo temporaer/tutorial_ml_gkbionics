@@ -104,11 +104,24 @@
 
 \input{linreg.tex}
 
-\subsection{Logistic Regression}
+\subsection{Classification}
+\begin{frame}
+    \frametitle{Classification}
+    \begin{itemize}
+        \item Predict to which class a data point belongs.
+        \item Training data are pairs $\left( (x_0, y_0), \cdots, (x_n, y_n)
+                \right), x_i \in \mathbb{R}, y_i \in \{0, \cdots, k\}$
+        \item Classical example: Spam / Ham.
+        \item All classes known beforehand.
+        \item Other examples: Digit recognition, cancer benign/malignant, \ldots
+    \end{itemize}
+\end{frame}
+
+\subsubsection{Logistic Regression}
 
 \input{logreg.tex}
 
-\subsection{$k$ Nearest Neighbor}
+\subsubsection{$k$ Nearest Neighbor}
 
 \input{knn.tex}
 
