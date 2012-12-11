@@ -1,21 +1,55 @@
 \begin{frame}
     \frametitle{Logistic Regression}
-    \begin{itemize}
-        \item Misnamed: Classification, not regression.
-        \item Linear decision function -> simple, easy to understand.
-    \end{itemize}
+    \begin{columns}
+        \column{.5\linewidth}
+            \begin{itemize}
+                \item Misnamed: Classification, not regression.
+                \item Linear decision function: simple, easy to understand.
+            \end{itemize}
+        \column{.5\linewidth}
+            \includegraphics[width=1\linewidth]{logreg-pics/synthetic_line}\\
+
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Example: Wisconsin Breast Cancer}
+    \begin{columns}
+        \column{.5\linewidth}
+            \begin{itemize}
+                \item Classify breast cancer samples in malign or benign.
+                \item 699 Samples with 10 measurements each.
+                \item We take only 3 measurements:
+                    \begin{itemize}
+                        \item Uniformity of Cell Size
+                        \item Uniformity of Cell Shape
+                        \item Single Epithelial Cell Size
+                    \end{itemize}
+                \item Training on 525, test on 175
+                \item 97.1\% Accuracy
+            \end{itemize}
+        \column{.5\linewidth}
+            \includegraphics[width=1\linewidth]{logreg-pics/wisconsin_surface}
+    \end{columns}
+
 \end{frame}
 
 \begin{frame}
     \frametitle{Mathematical Formulation I}
-    \begin{itemize}
-        \item For two classes $-1, +1$.
-        \item Decision boundary given by hyperplane.
-        \item Hyperplane defined by normal vector and offset:
-            \begin{align}
-                y = \text{sign}(<w, x> + b)
-            \end{align}
-    \end{itemize}
+    \begin{columns}
+        \column{.5\linewidth}
+        \begin{itemize}
+            \item For two classes $-1, +1$.
+            \item Decision boundary given by hyperplane.
+            \item Hyperplane defined by normal vector and offset:
+                \begin{align*}
+                    y = \text{sign}(\left<w, x\right> + b)
+                \end{align*}
+        \end{itemize}
+        \column{.5\linewidth}
+            \includegraphics[width=1\linewidth]{logreg-pics/synthetic_line}\\
+
+    \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -23,11 +57,11 @@
     \begin{itemize}
         \item Relation to regression:
             \begin{align}
-                p(y=+1) = f(x) = \text{logistic}(<w, x> + b)
+                p(y=+1) = f(x) = \text{logistic}(\left<w, x\right> + b)
             \end{align}
         \item As probabilities are between $0$ and $1$, the logistic function
             squashes the regression result.
-        \item $p(Y=+1 | x) > 0.5 \Leftrightarrow <w, x> + b > 0$
+        \item $p(Y=+1 | x) > 0.5 \Leftrightarrow \left <w, x \right> + b > 0$
         \item Need to solve:
             \begin{align}
                 \min_w \sum_{i=0}^n \log(p(Y=y_i | x_i))
@@ -35,9 +69,6 @@
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{Example: Wisconsin Breast Cancer}
-\end{frame}
 
 \begin{frame}
     \frametitle{Example: Classifying Insults}
