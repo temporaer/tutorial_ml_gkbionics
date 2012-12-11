@@ -30,6 +30,7 @@
 *.vrb
 *.xdy
 *.tdo
+*.eps
 presentation/.mk
 presentation/presentation_screen.pdf
 presentation/presentation.tex.project.vim
