@@ -1,15 +1,63 @@
 \begin{frame}
-    \frametitle{k-Means}
+    \frametitle{$k$-Means Motivation}
 
-    
+    \begin{columns}
+        \begin{column}{5cm}
+           \begin{itemize}
+               \item Often, you don't have much information about the 
+                   structure of $X$.
+               \item In fact, we did not use any in the PCA step.
+               \item<2-> By visualization, you can guess structure in $X$,\\
+                   \alert{``there might be 3 clusters''}.
+           \end{itemize}
+        \end{column}
+
+        \begin{column}{5cm}
+            \includegraphics<1>[width=\linewidth]{pca-pics/iris-all-nocolor}
+            \includegraphics<2>[width=\linewidth]{pca-pics/iris-2d-nocolor}
+        \end{column}
+    \end{columns}
+
 \end{frame}
 
 \begin{frame}
-    \frametitle{k-Means -- Interactive}
-    \begin{itemize}
-        \item  find blobs on artificial data
-        \item  color discretization in an image (TODO: bio images (--> Kristian and Baukhage?))
-        \item  visualize cluster centers in "interesting data" (TODO: data??)
-    \end{itemize}
+    \frametitle{$k$-Means Questions}
+
+    \begin{columns}
+        \begin{column}{5cm}
+            \begin{enumerate}[<+->]
+               \item Can we \alert{assign} data points to clusters?
+               \item Can we find a \alert{representative} for each cluster?
+           \end{enumerate}
+        \end{column}
+        \begin{column}{5cm}
+            \includegraphics<1->[width=\linewidth]{pca-pics/iris-2d-nocolor}
+        \end{column}
+    \end{columns}
+
+\end{frame}
+
+\begin{frame}
+    \frametitle{$k$-Means Algorithm}
+    $k$-Means finds assignments $j$ and cluster centers $\mu$ by solving
+    \begin{align}
+        \min_{\mu}\sum_{i=0}^{N} \min_j\left\|\mu_j-x_i\right\|^2
+        \label{eq:km}
+    \end{align}
+    The algorithm is simple:
+    \begin{enumerate}
+        \item Set $\mu$, $j$ to a random value
+        \item Solve \eqref{eq:km} for $j$
+        \item Solve \eqref{eq:km} for $\mu$
+        \item If $j$ or $\mu$ changed significantly, go to step 2.
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+    \frametitle{$k$-Means Visualization}
+    \begin{center}
+    \href{http://icperformance.com/wp-content/demos/kmeansmouse.html}{K-Means 
+        Website Example}
+    \end{center}
 \end{frame}
 
