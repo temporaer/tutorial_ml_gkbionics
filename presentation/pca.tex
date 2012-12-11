@@ -103,17 +103,17 @@ X =
 
   \begin{columns}
     \column{.5\linewidth}
-    \begin{lstlisting}[escapechar=!]
-      P !$\leftarrow$! PCA(X, 2)
-      X2 !$\leftarrow$! P * X'
-    \end{lstlisting}
+    \begin{align*}
+        P &\leftarrow \mathrm{PCA}(X-m, 2)\\
+        X_{\mathrm{PCA}} & \leftarrow P (X-m)
+    \end{align*}
     \column{.5\linewidth}
     \includegraphics[width=.99\linewidth]{pca-pics/iris-2d}
   \end{columns}
 
   \pause
   \begin{itemize}
-  \item Important variables: Take a look at the projection matrix \verb+P+:
+  \item Important variables: Take a look at the projection matrix $P$:
   \end{itemize}
 
   \begin{lstlisting}[escapechar=!]
@@ -122,13 +122,22 @@ X =
   \end{lstlisting}
 \end{frame}
 
-\begin{frame}
+\begin{frame}[fragile]
   \frametitle{Noise Reduction}
-  \begin{itemize}
-  \item Most of the data explained by first axes
-  \item (almost) constant axes thrown away
-  \item Projecting back to input-space reduces noise
-  \end{itemize}
+  \begin{columns}
+      \begin{column}{.7\linewidth}
+          \begin{itemize}
+              \item Most of the data explained by first axes
+              \item (almost) constant axes thrown away
+              \item Projecting back to input-space reduces noise
+          \end{itemize}
+      \end{column}
+      \begin{column}{.3\linewidth}
+          \begin{align*}
+              X_{\mathrm{clean}} \rightarrow X_{\mathrm{PCA}} P + m 
+          \end{align*}
+      \end{column}
+  \end{columns}
   \begin{center}
     \includegraphics[width=.47\linewidth]{pca-pics/iris-all}\hfill%
     \includegraphics[width=.47\linewidth]{pca-pics/iris-bt}
