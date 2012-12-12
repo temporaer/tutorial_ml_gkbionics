@@ -18,7 +18,7 @@
         \column{.5\linewidth}
             \begin{itemize}
                 \item Classify breast cancer samples in malign or benign.
-                \item 699 Samples with 10 measurements each.
+                \item 700 Samples with 10 measurements each.
                 \item We take only 3 measurements:
                     \begin{itemize}
                         \item Uniformity of Cell Size
@@ -42,9 +42,10 @@
             \item For two classes $-1, +1$.
             \item Decision boundary given by hyperplane.
             \item Hyperplane defined by normal vector and offset:
-                \begin{align*}
-                    y = \text{sign}(\left<w, x\right> + b)
-                \end{align*}
+                \begin{gather*}
+                    y = \text{sign}(\left<w, x\right> + b)\\
+                    w \in \mathbb{R}^n, b \in \mathbb{R}
+                \end{gather*}
         \end{itemize}
         \column{.5\linewidth}
             \includegraphics[width=1\linewidth]{logreg-pics/synthetic_line_w}\\
