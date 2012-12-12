@@ -71,8 +71,59 @@
 
 
 \begin{frame}
-    \frametitle{Example: Classifying Insults}
-    % coefficients are meaningful
+    \frametitle{Example: Classifying Insults I}
+    \begin{columns}
+        \column{.5\linewidth}
+        \begin{itemize}
+            \item Dataset: Forum posts / comments on social issues.
+            \item Two classes: Insulting towards other posters / not insults.
+            \item Training set: 4000 comments, test set: 2500 comments
+            \item Features: Extract dictionary of all occuring words, count occurence per comment.
+            \item Very high dimensional: 16.500
+            \end{itemize}
+        \column{.5\linewidth}
+            \begin{beamercolorbox}[sep=1em,wd=5cm]{insult}
+                \usebeamerfont{myserif}Either you are fake or extremely stupid\dots maybe both\dots\\
+            \end{beamercolorbox}
+            \vspace{1em}
+
+            \begin{beamercolorbox}[sep=1em,wd=5cm]{noinsult}
+                \usebeamerfont{myserif}i really don't understand your point. It seems that you are
+                mixing apples and oranges.\\
+            \end{beamercolorbox}
+            \vspace{1em}
+
+            \begin{beamercolorbox}[sep=1em,wd=5cm]{insult}
+                \usebeamerfont{myserif}To engage in an intelligent debate with
+                you is like debating to a retarded person.  It's useless.  It
+                looks like you're bent on disregarding the efforts of the
+                government.
+            \end{beamercolorbox}
+            \vspace{1em}
+
+            \begin{beamercolorbox}[sep=1em,wd=5cm]{noinsult}
+                \usebeamerfont{myserif}@jdstorm dont wish him injury but it happened on its OWN and i
+                DOUBT he's injured, he looked embarrassed to me\\
+            \end{beamercolorbox}
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Example: Classifying Insults II}
+    \begin{columns}[t]
+        \column{.4\linewidth}
+            \begin{beamercolorbox}[sep=1em,wd=5cm]{insult}
+                \usebeamerfont{myserif}Either you are fake or extremely stupid\dots maybe both\dots\\
+            \end{beamercolorbox}
+        \column{.4\linewidth}
+            \includegraphics[width=.9\linewidth]{logreg-pics/bag_of_words-crop}\\
+            
+    \end{columns}
+        \begin{itemize}
+            \item Accuracy with logistic regression: 83.0%
+            \item Some large coefficients:
+        \end{itemize}
 \end{frame}
 
 %\begin{frame}
