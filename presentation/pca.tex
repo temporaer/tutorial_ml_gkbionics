@@ -99,31 +99,84 @@ X =
 
 \begin{frame}[fragile]
   \frametitle{Principal Component Analysis}
+  \begin{columns}
+      \begin{column}{6cm}
+          \begin{itemize}[<+->]
+              \item In image on right, what is the ``most important axis''?
+              \item PCA models the data as a (multi-dimensional) ellipse
+              \item PCA finds direction with largest variance (=diameter)
+              \item First coordinate is projection onto this direction
+              \item Continue with second\ldots
+          \end{itemize}
+      \end{column}
+  
+      \begin{column}{5cm}
+          \includegraphics<1>[width=\linewidth]{pca-pics/pointcloud-2d}
+          \includegraphics<2>[width=\linewidth]{pca-pics/pointcloud-2d-model}
+          \includegraphics<3>[width=\linewidth]{pca-pics/pointcloud-2d-vecs-1a}
+          \includegraphics<4>[width=\linewidth]{pca-pics/pointcloud-2d-vecs-proj1}
+          \includegraphics<5>[width=\linewidth]{pca-pics/pointcloud-2d-vecs-2a}
+      \end{column}
+      \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Principal Component Analysis}
+  \begin{columns}
+      \begin{column}{6cm}
+          \begin{enumerate}[<+->]
+              \item Find mean
+              \item Subtract mean
+              \item Model as ellipse
+              \item Rotate to align with axis\\
+                  by multiplying $X$ with rotation matrix $P$
+              \item Project data points to 1st axis
+              \item Project data points to 2nd axis
+              \item \ldots
+          \end{enumerate}
+      \end{column}
+  
+      \begin{column}{5cm}
+          \includegraphics<1>[width=\linewidth]{pca-pics/pointcloud-2d-step1}
+          \includegraphics<2>[width=\linewidth]{pca-pics/pointcloud-2d-step2}
+          \includegraphics<3>[width=\linewidth]{pca-pics/pointcloud-2d-step3}
+          \includegraphics<4>[width=\linewidth]{pca-pics/pointcloud-2d-step4}
+          \includegraphics<5>[width=\linewidth]{pca-pics/pointcloud-2d-step5}
+          \includegraphics<6>[width=\linewidth]{pca-pics/pointcloud-2d-step6}
+      \end{column}
+      \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{PCA Summary}
   \begin{itemize}
-  \item PCA projects to axis with greatest \alert{variance}
-  \item Often provides good \alert{first insight} into dataset
+  \item PCA projects to axis with greatest \alert<1>{variance}
+  \item Often provides good \alert<1>{first insight} into dataset
   \end{itemize}
 
   \begin{columns}
     \column{.5\linewidth}
     \begin{align*}
-        P &\leftarrow \mathrm{PCA}(X-m, 2)\\
-        X_{\mathrm{PCA}} & \leftarrow P (X-m)
+        \bar X &\leftarrow X - \mathrm{mean}(X)\\
+        P &\leftarrow \mathrm{PCA}(\bar X, 2)\\
+        X_{\mathrm{PCA}} & \leftarrow P \cdot \bar X
     \end{align*}
     \column{.5\linewidth}
     %\includegraphics[width=.99\linewidth]{pca-pics/iris-2d}
-    \includegraphics[width=.99\linewidth]{pca-pics/iris-2d-nocolor}
+    \includegraphics<1>[height=.7\linewidth]{pca-pics/iris-all-nocolor}
+    \includegraphics<2->[height=.7\linewidth]{pca-pics/iris-2d-nocolor}
   \end{columns}
 
-  \pause
+  \uncover<3->{
   \begin{itemize}
-  \item Important variables: Take a look at the projection matrix $P$:
+  \item Identify important variables in projection matrix $P$:
   \end{itemize}
 
-  \begin{lstlisting}[escapechar=!]
-    P = [[ 0.36 -0.08 !\alert<3>{0.85}! 0.35]
-         [!\alert<4>{-0.65}! !\alert<4>{-0.72}  0.17  0.07]]
-  \end{lstlisting}
+  \texttt{%
+    P = [[ 0.36 -0.08 \alert<3>{0.85} 0.35] \\
+    ~~~~~[\alert<4>{-0.65} \alert<4>{-0.72}  0.17  0.07]]\\
+     }
+  }
 \end{frame}
 
 \begin{frame}[fragile]
@@ -143,10 +196,10 @@ X =
       \end{column}
   \end{columns}
   \begin{center}
-    \includegraphics[width=.47\linewidth]{pca-pics/iris-all-nocolor}\hfill%
-    \includegraphics[width=.47\linewidth]{pca-pics/iris-bt-nocolor}
-    %\includegraphics[width=.47\linewidth]{pca-pics/iris-all}\hfill%
-    %\includegraphics[width=.47\linewidth]{pca-pics/iris-bt}
+    \includegraphics[width=.40\linewidth]{pca-pics/iris-all-nocolor}\hfill%
+    \includegraphics[width=.40\linewidth]{pca-pics/iris-bt-nocolor}
+    %\includegraphics[width=.40\linewidth]{pca-pics/iris-all}\hfill%
+    %\includegraphics[width=.40\linewidth]{pca-pics/iris-bt}
   \end{center}
 \end{frame}
 
