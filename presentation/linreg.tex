@@ -42,12 +42,12 @@
 
 
 \begin{frame}
-    \frametitle{Example for Hyperplane}
+    \frametitle{Example for Line}
     \begin{columns}
         \column{.5\linewidth}
             \begin{itemize}
                 \item $y =  w_1 x + b$
-                \item How do we find coefficients $w_i$ ? 
+                \item How do we find coefficients $w_i$ and bias $b$ ? 
             \end{itemize}
         \column{.5\linewidth}
             \includegraphics[width=1\linewidth]{linreg-pics/lg}\\
@@ -64,9 +64,9 @@
     \begin{columns}
         \column{.5\linewidth}
             \begin{itemize}
-                \item Minime the distance between each data point and the line
-                \item $ E = \sum_{i=0}^{N}(y_i - (w x_i + b))$
-                \item Linear regression finds the weights for which the error $E$ is minimal
+                \item Minimize the distance between each data point and the line
+                \item $ E = \sum_{i=0}^{N}(y_i - (w x_i + b))^2$
+                \item Linear regression finds the weights and b for which the error $E$ is minimal
             \end{itemize}
         \column{.5\linewidth}
             \includegraphics[width=1\linewidth]{linreg-pics/lg}\\
