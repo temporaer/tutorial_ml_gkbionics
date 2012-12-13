@@ -6,3 +6,4 @@ Comment[de]=IPython Notebooks fuer das Machine Learning Tutorial
 Exec=ipython notebook
 Terminal=true
 Icon=ipython
+Path=.
