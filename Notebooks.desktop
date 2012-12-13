@@ -6,4 +6,3 @@ Comment[de]=IPython Notebooks fuer das Machine Learning Tutorial
 Exec=bash -c 'cd ; cd Desktop/Tutorial; ipython notebook'
 Terminal=true
 Icon=ipython
-Path=%k
