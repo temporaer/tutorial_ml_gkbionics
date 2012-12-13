@@ -1,24 +1,116 @@
 \begin{frame}
-    \frametitle{Linear Regression -- Theory}
-    \begin{itemize}
-        \item talk about regression coefficients
-        \item  prediction error
-        \item  draw line in 2D
-        \item  (draw plane in 3D)
-        \item  formula for hyperplane
-        \item  formula for the loss
-    \end{itemize}
+    \frametitle{Linear Regression}
+    \begin{columns}
+        \column{.5\linewidth}
+            \begin{itemize}
+                \item Task: for the given input $x$ predict the real value output $y = f(x)$ 
+                \item Fit a hyperplane to data 
+                \item Linear  function: simple, easy to understand.
+            \end{itemize}
+        \column{.5\linewidth}
+            \includegraphics[width=1\linewidth]{linreg-pics/lg2}\\
+
+    \end{columns}
 \end{frame}
+
+
+\begin{frame}
+    \frametitle{Example: Okuns Law Quarterly Differences}
+    \begin{columns}
+        \column{.5\linewidth}
+            \begin{itemize}
+                \item Data: quarterly change in unemployment rate 
+                \item Predict: quarterly change in GDP
+            \end{itemize}
+        \column{.5\linewidth}
+            \includegraphics[width=1\linewidth]{linreg-pics/lg}\\
+
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Mathematical Formulation I}
+            \begin{itemize}
+                \item Linear function: $y = \sum_{i=1}^{N} w_i x_i + b$
+                \item $x_i$ - input    
+                \item $w_i$ - weights 
+                \item $b$ - bias
+                \item $y$ - output
+            \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Example for Hyperplane}
+    \begin{columns}
+        \column{.5\linewidth}
+            \begin{itemize}
+                \item $y =  w_1 x + b$
+                \item How do we find coefficients $w_i$ ? 
+            \end{itemize}
+        \column{.5\linewidth}
+            \includegraphics[width=1\linewidth]{linreg-pics/lg}\\
+
+    \end{columns}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+    \frametitle{Mathematical Formulation II}
+    \begin{columns}
+        \column{.5\linewidth}
+            \begin{itemize}
+                \item Minime the distance between each data point and the line
+                \item $ E = \sum_{i=0}^{N}(y_i - (w x_i + b))$
+                \item Linear regression finds the weights for which the error $E$ is minimal
+            \end{itemize}
+        \column{.5\linewidth}
+            \includegraphics[width=1\linewidth]{linreg-pics/lg}\\
+    \end{columns}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Example: 2D Data}
+    \begin{columns}
+        \column{.5\linewidth}
+            \begin{itemize}
+                \item What if our input data has 2-dim?
+                \item We can see some linear relationship in the data
+            \end{itemize}
+        \column{.5\linewidth}
+            \includegraphics[width=1\linewidth]{linreg-pics/only_data}\\
+
+    \end{columns}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Example: 2D Data}
+    \begin{columns}
+        \column{.5\linewidth}
+            \begin{itemize}
+                \item This time, we are fitting the plane
+                \item $y =  w_2 x_2 + w_1 x_1 + b$
+
+            \end{itemize}
+        \column{.5\linewidth}
+            \includegraphics[width=1\linewidth]{linreg-pics/with_plane}\\
+            \includegraphics[width=1\linewidth]{linreg-pics/lin_reg_plane}\\
+
+    \end{columns}
+\end{frame}
+
 
 \begin{frame}
     \frametitle{Linear Regression -- Interactive}
     \begin{itemize}
-        \item  use some real-world dataset
-            http://people.sc.fsu.edu/~jburkardt/datasets/regression/regression.html
-        \item  find w hat by calling linear regression function
-        \item  measure prediction error for withheld subset data
-        \item  plot result (tricky)
-        \item  same using boston housing or diabetes dataset
+        \item Open Notebook titled 3a - Linear regression 1D.
     \end{itemize}
 \end{frame}
 

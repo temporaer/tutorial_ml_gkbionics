@@ -115,8 +115,28 @@
 \begin{frame}
     \frametitle{Supervised Learning -- General}
     \begin{itemize}
-        \item Supervised Learning
-        \item Training, Testing
+	\item Task: Learn the function $ y = f(X) $ which predicts the output $y$ for the given input $X$, knowing the desired output
+        \item Each example in data is a tuple of the input and desired output (target)
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Example: Supervised Learning}
+    \begin{itemize}
+       \item Input Data: 40 examples of persons (age, height, smoker, nationality). 
+	\item Targets: Weight of the person (desired output)
+	\item Goal: Learn a function which predicts the weight for the new person
+		knowing the age, height, smoker, nationality of person.
+
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Training / Test data}
+    \begin{itemize}
+	\item Learning is done on the training data, for which we know the input and targets
+	\item To test if the model learned to predict the output, we use test data. 		
     \end{itemize}
 \end{frame}
 
