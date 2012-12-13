@@ -8,3 +8,5 @@ def plot_decision_boundary(clf, X):
     xx = np.linspace(np.min(X[:, 0]), np.max(X[:, 0]))
     yy = a * xx - clf.intercept_ / w[1]
     plt.plot(xx, yy)
+    plt.xticks(())
+    plt.yticks(())
