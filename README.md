@@ -9,14 +9,7 @@ Content
 -------
 - The slides are at ``presentation/presentation.pdf``.
 
-- The interactive notebooks are in the main folder:
-    - 0 - Python Intro.ipynb
-    - 1 - PCA.ipynb
-    - 2 - KMeans.ipynb
-    - 3a - Linear regression 1D.ipynb
-    - 3b - Linear regression 2D.ipynb
-    - 4 - Logistic Regression.ipynb
-    - 5 - k Nearest Neighbors.ipynb
+- The interactive notebooks are in the main folder.
 
 Viewing the notebooks online
 ----------------------------
