@@ -7,7 +7,7 @@ Created by Hannes Schulz, Andreas Mueller and Nenard Birešev.
 
 Content
 -------
-- The slides are at [``presentation/presentation.pdf``](https://github.com/amueller/tutorial_ml_gkbionics/raw/master/presentation/presentation.pdf)
+- The slides are at [``presentation/presentation_screen.pdf``](https://github.com/amueller/tutorial_ml_gkbionics/raw/master/presentation/presentation_screen.pdf)
 
 - The interactive notebooks are in the main folder.
 
