@@ -29,7 +29,7 @@ This is **not interactive**. You need to install Python on your computer to use 
 - [3a - Linear regression 1D.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/temporaer/tutorial_ml_gkbionics/master/3a%2520-%2520Linear%2520regression%25201D.ipynb)
 - [3b - Linear regression 2D.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/temporaer/tutorial_ml_gkbionics/master/3b%2520-%2520Linear%2520regression%25202D.ipynb)
 - [4 - Logistic Regression.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/temporaer/tutorial_ml_gkbionics/master/4%2520-%2520Logistic%2520Regression.ipynb)
-- [5 - k Nearest Neighbors.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/temporaer/tutorial_ml_gkbionics/master/5%2520-%2520k%2520Neighbors%2520Neighbors.ipynb)
+- [5 - k Nearest Neighbors.ipynb](http://nbviewer.ipython.org/urls/raw.github.com/temporaer/tutorial_ml_gkbionics/master/5%2520-%2520k%2520Nearest%2520Neighbors.ipynb)
 
 More content
 ------------
