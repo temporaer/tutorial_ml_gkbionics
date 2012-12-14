@@ -32,11 +32,11 @@
 \begin{frame}
     \frametitle{Mathematical Formulation I}
             \begin{itemize}
-                \item Linear function: $y = \sum_{i=1}^{N} w_i x_i + b$
-                \item $x_i$ - input    
-                \item $w_i$ - weights 
+                \item Linear function: $y =  \left< w, x \right> + b$
+                \item $x$ - input vector   
+                \item $w$ - weight vector
                 \item $b$ - bias
-                \item $y$ - output
+                \item $y$ - output 
             \end{itemize}
 \end{frame}
 
@@ -46,7 +46,7 @@
     \begin{columns}
         \column{.5\linewidth}
             \begin{itemize}
-                \item $y =  w_1 x + b$
+                \item $y =  w_1 x_1 + b$
                 \item How do we find coefficients $w_i$ and bias $b$ ? 
             \end{itemize}
         \column{.5\linewidth}
@@ -65,8 +65,8 @@
         \column{.5\linewidth}
             \begin{itemize}
                 \item Minimize the distance between each data point and the line
-                \item $ E = \sum_{i=0}^{N}(y_i - (w x_i + b))^2$
-                \item Linear regression finds the weights and b for which the error $E$ is minimal
+                \item $ E = \sum_{i=0}^{N}(y_i - (w_i x_i + b))^2$
+                \item Linear regression finds the weights and bias for which the error $E$ is minimal
             \end{itemize}
         \column{.5\linewidth}
             \includegraphics[width=1\linewidth]{linreg-pics/lg}\\
